@@ -1,0 +1,141 @@
+@charset "utf-8";
+
+@media screen and (max-width:1079px) {
+.fixbox{
+        padding: 0;
+        /* padding-top: 55px; */
+        height: auto;
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid rgba(173, 173, 173, 0.397);
+        flex-direction: row;
+    }
+
+.gnb a{
+    font-size: 40px;
+}
+
+.gnb>ul{
+    left: 70%;
+}
+
+.gnb a {
+    width: 300px;
+}
+
+.gnb li{
+    margin-bottom: 25px;
+}
+
+.logo{
+    position: relative;
+    left: -15px;
+    width: 100px;
+    height: 50px;
+}
+
+.logo a{
+    /* transform: scale(.8); */    
+    width: 100%;    
+    height: 100%;
+    margin-right: -50px;
+}
+
+.bar{
+    right: 3%;
+    top: 55%;
+    transform: scaleX(-1) scale(.8) translateY(-50%);
+    bottom: auto;
+    /* text-align: right; */
+}
+
+
+.scrtxt{
+    top: 15%;
+    font-size: 10px;
+    right: 3%;
+}
+
+.h3, .h2{
+    font-size: 40px !important;
+}
+
+.p1, .p{
+    font-size: 15px !important;
+}
+
+.h3{
+    margin: 0 !important;
+}
+
+
+/* section2 */
+.section2 {
+    background-image: url(../images/omg002.png);
+    background-size: cover;
+    /* background-color: #e2c6ca; */
+}
+
+.box{
+ left: 5%;
+ top: auto;
+ bottom: 10%;
+ width: auto;
+height: auto;
+}
+
+.text_mask.b1{
+    height: 46px;
+}
+
+.m1{
+    margin-bottom: 5px;
+}
+
+
+
+
+.category{
+    left: 10%;
+    bottom: 5%;
+}
+.category span{
+    font-size: 13px;
+}
+
+.num{
+    bottom: 4.2%;
+    right: 10%;
+    font-size: 13px;
+}
+
+.num span{
+    margin-bottom: 25px;
+}
+
+body.fp-viewing-0 .prenum{
+    top: 0;
+}
+body.fp-viewing-1 .prenum{
+    top: -38px;
+}
+body.fp-viewing-2 .prenum{
+    top: -76px;
+}
+body.fp-viewing-3 .prenum{
+    top: -114px;
+}
+body.fp-viewing-4 .prenum{
+    top: -152px;
+}
+
+
+
+
+.footerline{
+    display: none;
+    }
+
+
+
+}/* 미디어쿼리 */

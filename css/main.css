@@ -1,0 +1,508 @@
+@charset "utf-8";
+
+@import url(./reset.css);
+@import url(./common.css);
+
+html{
+    background-color: black;
+}
+
+html .body{
+    display: none;
+}
+
+/* ::-webkit-scrollbar {
+    display: none;
+  } */
+
+/* html {
+    overflow: hidden;
+} */
+
+html,
+body {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+}
+
+.body>img{
+    display: none;
+}
+
+
+
+
+
+/********************************************************
+                     header
+********************************************************/
+.fixbox {
+    height: 100%;
+    position: fixed;
+    /* background-color: rgba(255, 255, 255, 0.301); */
+    z-index: 101;    
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 65px 45px 55px;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    border-right: 2px solid rgba(173, 173, 173, 0.397);
+    box-sizing: border-box;
+}
+
+.logo a{
+    display: block;
+    background: url(../images/LOGO-removebg.png) no-repeat center/contain;
+    width: 150px;
+    height: 100px;
+    position: relative;
+    z-index: 2;
+}
+
+.bar{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 15%;
+    z-index: 2;
+    transition: top .2s ease-in-out, width .2s ease-in-out .2s, transform .2s ease-in-out.2s, scale none;
+}
+
+.bar.open span{
+    transition: top .2s ease-in-out .2s, width .2s ease-in-out, transform .2s ease-in-out;
+}
+
+.bar.open .tb1{
+    width: 30px;
+    transform: rotate(45deg);
+    top: 7px;
+    transition: width .1s ease-in-out, top .1s ease-in-out .1s, transform .1s ease-in-out .2s;
+
+}
+.bar.open .bb1{
+    width: 30px;
+    transform: rotate(-45deg);
+    top: 4px;
+    transition:  top .1s ease-in-out .1s, transform .1s ease-in-out .2s;
+
+}
+
+.bar span{
+    display: block;
+    height: 3px;
+    background-color: #fff;
+    position: relative;
+    /* border: 1px solid rgba(0, 0, 0, 0.205); */
+
+}
+
+.tb1{
+    width: 20px;
+    top: 0px;
+    transition: width .1s ease-in-out .1s, top .1s ease-in-out .1s, transform .1s ease-in-out;
+}
+
+.bb1{
+    width: 30px;
+    top: 10px;
+    transition:  top .1s ease-in-out .1s, transform .1s ease-in-out;
+
+}
+
+
+.gnb{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1;
+    display: none;
+    /* opacity: ; */
+}
+
+/* .gnb.show{
+    display: block;
+} */
+
+
+
+.gnb>ul{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-70%, -50%);
+}
+.gnb li{
+    margin-bottom: 50px;
+    position: relative;
+    opacity: 0;
+    top: 20px;
+    /* display: none; */
+    
+}
+.gnb a{
+    font-size: 50px;
+    display: block;
+    color: #fff;
+    font-weight: 900;
+
+
+    /* display: none;   */
+    /* transition: .4s cubic-bezier(0.25, 1, 0.5, 1) .3s; */
+
+    /* line-height: 8vh; */
+}
+
+
+
+
+
+/*******************************************
+메인 공통영역
+*******************************************/
+
+.section {
+    height: 100vh;
+}
+
+/* 스크롤시 애니를 위한 텍스트 마스크 작업 */
+
+.text_mask{
+    /* outline: 1px solid red; */
+    /* overflow: hidden; */
+    /* position: absolute; */
+    width: 600px;
+    height: 27px;
+    /* left: 300px; */
+    overflow: hidden;
+}
+
+.text_mask .h3{
+    width: 600px;
+}
+
+.text_mask.b1{
+    height: 65px;
+}
+
+a {
+    display: block;
+}
+
+.box{
+    position: absolute;
+    top: 10%;
+    width: 40vw;
+    height: 30vh;
+    left: 23%;
+}
+
+
+
+.m1{
+    margin-bottom: 20px;
+}
+
+.h2, .p{
+    opacity: 0;
+}
+
+
+.h2{
+    transform: translateY(30%);
+    transition: opacity 1.5s cubic-bezier(0.25, 1, 0.5, 1) .4s, transform 1.2s cubic-bezier(0.25, 1, 0.5, 1) .4s;
+}
+
+.p{
+    transform: translateY(40%);
+    transition: opacity 1.5s cubic-bezier(0.25, 1, 0.5, 1) .7s, transform 1.2s cubic-bezier(0.25, 1, 0.5, 1) .7s;
+
+}
+
+.active .h2, .active .p{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+   
+
+
+
+/*************************************
+    section 1
+*************************************/
+#section1 {
+    position: relative;
+}
+
+body.fp-viewing-0 .section1 .h3, body.fp-viewing-0 .section1 .p1{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.section1 .h3{
+    color: white;
+    font-weight: 900;
+    font-size: 60px;
+    position: absolute;
+    /* left: 300px; */
+    margin-bottom: 30px;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    display: block;
+    /* z-index: 100; */
+    opacity: 1;
+    transform: translateY(40%);
+    transition: opacity 2s cubic-bezier(0.25, 1, 0.5, 1) .1s, transform 1.7s cubic-bezier(0.25, 1, 0.5, 1) .1s;
+}
+.section1 .p1{
+    display: block;
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    /* left: 300px; */
+    line-height: 1.5;
+    display: block;
+    opacity: 0;
+    transform: translateY(40%);
+    transition: opacity 2s cubic-bezier(0.25, 1, 0.5, 1) .4s, transform 1.7s cubic-bezier(0.25, 1, 0.5, 1) .4s;
+}
+
+
+.myvid {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(.9);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+
+
+/*************************************
+    section 2
+*************************************/
+/* #section2 {
+    background-color: lightpink;
+} */
+
+.section2 {
+    background-image: url(../images/omg.png);
+
+}
+
+
+
+
+
+
+
+
+/*************************************
+    section 3
+*************************************/
+/* #section3 {
+    background-color: coral;
+} */
+
+.section3 {
+    background-image: url(../images/sandl.jpg);
+}
+
+
+
+
+
+
+
+
+
+
+/*************************************
+    section 4
+*************************************/
+/* #section4 {
+    background-color: aqua;
+} */
+
+.section4 {
+    background-image: url(../images/ONF.jpg);
+}
+
+/* .section4.ibx p, .section4.ibx h2{
+    color: black;
+} */
+
+
+
+
+
+
+
+/*************************************
+    section 5
+*************************************/
+/* #section5 {
+    background-color: black;
+} */
+
+.section5 {
+    background-image: url(../images/highup-audition-bg.gif);
+}
+
+.section5.ibx p{
+    top: 250px;
+}
+
+
+
+
+
+
+
+
+/************************************************* 
+        fixbox2
+*************************************************/
+.fixbox2{
+    position: fixed;
+    z-index: 100;
+}
+
+.footerline{
+    width: calc(100vw - 242px);
+    height: 2px;
+    background-color: rgba(173, 173, 173, 0.397);
+    right: 0;
+    top: 80vh;
+}
+
+
+.scrtxt{
+    color: white;
+    /* width: 50px; */
+    /* height: 100px; */
+    right: 5.5%;
+    top: 8.5%;
+    writing-mode: tb-rl;
+    /* outline: 1px solid red; */
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+
+.category{
+    position: absolute;
+    bottom: 80px;
+    left: 360px;
+    /* outline: 1px solid red; */
+    height: 30px;
+    overflow: hidden;
+}
+
+.catbox{
+    position: relative;
+    top: 0px;
+    transition: .4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.category span{
+    display: block;
+    color: white;
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 25px;
+}
+
+body.fp-viewing-0 .catbox{
+    top: 0;
+}
+body.fp-viewing-1 .catbox{
+    top: -50px;
+}
+body.fp-viewing-2 .catbox{
+    top: -100px;
+}
+body.fp-viewing-3 .catbox{
+    top: -150px;
+}
+body.fp-viewing-4 .catbox{
+    top: -200px;
+}
+
+.num{
+    display: flex;
+    position: absolute;
+    bottom: 80px;
+    right: 10%;
+    color: #fff;
+    font-size: 18px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.num div{
+    margin: 0 4px;
+}
+
+.num .prenum{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: .4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.num span{
+    margin-bottom: 25px;
+}
+
+body.fp-viewing-0 .prenum{
+    top: 0;
+}
+body.fp-viewing-1 .prenum{
+    top: -43px;
+}
+body.fp-viewing-2 .prenum{
+    top: -86px;
+}
+body.fp-viewing-3 .prenum{
+    top: -129px;
+}
+body.fp-viewing-4 .prenum{
+    top: -172px;
+}
+
+
+/* 로딩박스 */
+.LDbx {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 99999;
+    background-color: rgba(255, 255, 255, 0.834);
+    text-align: center;
+    line-height: 100vh;
+}
+
+.LDbx img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
